@@ -13,6 +13,11 @@ stripe.api_key = stripe_keys['secret_key']
 
 app = Flask(__name__)
 app.secret_key = os.environ['APP_SECRET']
+
+mongolab_uri = os.environ.get("MONGOLAB_URI")
+if mongolab_uri:
+  connect('computers_inc', host=mongolab_uri)
+
 connect('computers_inc')
 
 @app.route('/')
