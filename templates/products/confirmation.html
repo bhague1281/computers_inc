@@ -1,0 +1,10 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}Confirmation for {{ product.name }}{% endblock %}
+
+{% block content %}
+<h2>Your purchase of {{ product.name }} has been confirmed!</h2>
+
+<p>A charge of ${{ product.price }} has been applied to your card.</p>
+
+{% endblock %}

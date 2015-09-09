@@ -1,0 +1,17 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<h2 class="text-center">Products</h2>
+
+{% for product in products %}
+<div class="col-sm-4">
+  <div class="well">
+    <h3><a href="{{ url_for('product_show', product_id=product.id) }}">{{ product.name }}</a></h3>
+    <p>{{ product.description }}</p>
+    <strong class="product-price">${{ product.price }}</strong>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
